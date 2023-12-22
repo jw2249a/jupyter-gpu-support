@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  jupyter-gpu:
+    image: jupyter-gpu:latest
+    runtime: nvidia 
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all 
+    ports:
+      - "8888:8888"
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+
